@@ -7,9 +7,9 @@
 typedef int ElementType; // ElementType暂定为int类型
 
 /*
- * Brief:	一个线性表的顺序结构具体实现
- * Author:  zengxt
- * Begin:   2020年7月30日 22:30:37
+ * brief:   一个线性表的顺序结构具体实现
+ * author:  zengxt
+ * begin:   2020年7月30日22:30:37
  */
 struct SeqList
 {
