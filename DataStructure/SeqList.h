@@ -1,15 +1,15 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 #include <stdlib.h>
 
-#define MAXSIZE 20		 // ´æ´¢¿Õ¼ä³õÊ¼·ÖÅä³¤¶È
-typedef int ElementType; // ElementTypeÔİ¶¨ÎªintÀàĞÍ
+#define MAXSIZE 20       // å­˜å‚¨ç©ºé—´åˆå§‹åˆ†é…é•¿åº¦
+typedef int ElementType; // ElementTypeæš‚å®šä¸ºintç±»å‹
 
 /*
- * Brief:	Ò»¸öÏßĞÔ±íµÄË³Ğò½á¹¹¾ßÌåÊµÏÖ
+ * Brief:	ä¸€ä¸ªçº¿æ€§è¡¨çš„é¡ºåºç»“æ„å…·ä½“å®ç°
  * Author:  zengxt
- * Begin:   2020Äê7ÔÂ30ÈÕ 22:30:37
+ * Begin:   2020å¹´7æœˆ30æ—¥ 22:30:37
  */
 struct SeqList
 {
@@ -18,13 +18,13 @@ struct SeqList
 };
 
 /**
- * Brief:	  ÕûÌå´´½¨Ë³Ğò±í
- * Method:    CreateList
- * Returns:   void
- * Parameter: SeqList * L		Ë³Ğò±íµÄÖ¸Õë
- * Parameter: ElementType a[]	Ô´Êı×é
- * Parameter: int n				Êı×éaµÄ³¤¶È
- */
+* brief:    æ•´ä½“åˆ›å»ºé¡ºåºè¡¨
+* method:   CreateList
+* param:    SeqList * L      é¡ºåºè¡¨çš„æŒ‡é’ˆ
+* param:    ElementType a[]  æºæ•°ç»„
+* param:    int n            æ•°ç»„açš„é•¿åº¦
+* return:   void
+*/
 void CreateList(SeqList* L, ElementType a[], int n)
 {
 	L = (SeqList*)malloc(sizeof(SeqList));
@@ -34,11 +34,11 @@ void CreateList(SeqList* L, ElementType a[], int n)
 }
 
 /**
- * Brief:	  ³õÊ¼»¯Ë³Ğò±í
- * Method:    InitList
- * Returns:   void
- * Parameter: SeqList * L
- */
+* brief:    åˆå§‹åŒ–é¡ºåºè¡¨
+* method:   InitList
+* param:    SeqList * L
+* return:   void
+*/
 void InitList(SeqList* L)
 {
 	L = (SeqList*)malloc(sizeof(SeqList));
@@ -46,44 +46,44 @@ void InitList(SeqList* L)
 }
 
 /**
- * Brief:	  Ïú»ÙË³Ğò±í
- * Method:    DestorySeqList
- * Returns:   void
- * Parameter: SeqList * L
- */
+* brief:    é”€æ¯é¡ºåºè¡¨
+* method:   DestorySeqList
+* param:    SeqList * L
+* return:   void
+*/
 void DestorySeqList(SeqList* L)
 {
 	free(L);
 }
 
 /**
- * Brief:	  ÅĞ¶ÏË³Ğò±íÊÇ·ñÎª¿Õ
- * Method:    ListEmpty
- * Returns:   bool
- * Parameter: SeqList * L
- */
+* brief:    åˆ¤æ–­é¡ºåºè¡¨æ˜¯å¦ä¸ºç©º
+* method:   ListEmpty
+* param:    SeqList * L
+* return:   bool
+*/
 bool ListEmpty(SeqList* L)
 {
 	return (L->length == 0);
 }
 
 /**
- * Brief:	  »ñÈ¡Ë³Ğò±í³¤¶È
- * Method:    ListLength
- * Returns:   int
- * Parameter: SeqList * L
- */
+* brief:    è·å–é¡ºåºè¡¨é•¿åº¦
+* method:   ListLength
+* param:    SeqList * L
+* return:   int
+*/
 int ListLength(SeqList* L)
 {
 	return L->length;
 }
 
 /**
- * Brief:	  Õ¹Ê¾Ë³Ğò±íµÄËùÓĞÔªËØ
- * Method:    DispList
- * Returns:   void
- * Parameter: SeqList * L
- */
+* brief:    å±•ç¤ºé¡ºåºè¡¨çš„æ‰€æœ‰å…ƒç´ 
+* method:   DispList
+* param:    SeqList * L
+* return:   void
+*/
 void DispList(SeqList* L)
 {
 	if (ListEmpty(L)) return;
@@ -95,14 +95,13 @@ void DispList(SeqList* L)
 }
 
 /**
- * Brief:	  ÇóË³Ğò±íÖĞµÚi¸öÔªËØµÄÖµ£¬´æÈëÊä³ö²ÎÊıe
-			  ¸ÃËã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÎªO(1)£¬ÌåÏÖÁËË³Ğò±íµÄËæ»ú´æÈ¡ÌØĞÔ
- * Method:    GetElement
- * Returns:   bool
- * Parameter: SeqList * L
- * Parameter: int i				Âß¼­ĞòºÅ
- * Parameter: ElementType & e	Êä³ö²ÎÊı
- */
+* brief:    æ±‚é¡ºåºè¡¨ä¸­ç¬¬iä¸ªå…ƒç´ çš„å€¼ï¼Œå­˜å…¥è¾“å‡ºå‚æ•°eã€è¯¥ç®—æ³•çš„æ—¶é—´å¤æ‚åº¦ä¸ºO(1)ï¼Œä½“ç°äº†é¡ºåºè¡¨çš„éšæœºå­˜å–ç‰¹æ€§ã€‘
+* method:   GetElement
+* param:    SeqList * L
+* param:    int i           é€»è¾‘åºå·
+* param:    ElementType & e è¾“å‡ºå‚æ•°
+* return:   bool
+*/
 bool GetElement(SeqList* L, int i, ElementType& e)
 {
 	if (i<1 || i > L->length) return false;
@@ -111,19 +110,19 @@ bool GetElement(SeqList* L, int i, ElementType& e)
 }
 
 /**
- * Brief:	  ²éÕÒµÚÒ»¸öÖµÎªeµÄÔªËØµÄÂß¼­Î»Ğò£¬ÈôÕâÑùµÄÔªËØ²»´æÔÚ£¬Ôò·µ»ØÖµÎª0
- * Method:    LocateElement
- * Returns:   int
- * Parameter: SeqList * L
- * Parameter: ElementType e
- */
+* brief:    æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå€¼ä¸ºeçš„å…ƒç´ çš„é€»è¾‘ä½åºï¼Œè‹¥è¿™æ ·çš„å…ƒç´ ä¸å­˜åœ¨ï¼Œåˆ™è¿”å›å€¼ä¸º0
+* method:   LocateElement
+* param:    SeqList * L
+* param:    ElementType e
+* return:   int
+*/
 int LocateElement(SeqList* L, ElementType e)
 {
 #if 1
 	for (int i = 0; i < L->length; ++i)
 	{
 		if (L->data[i] == e)
-			return i + 1; // Âß¼­Î»Ğò = ÏÂ±ê + 1
+			return i + 1; // é€»è¾‘ä½åº = ä¸‹æ ‡ + 1
 	}
 	return 0;
 #else
@@ -133,44 +132,43 @@ int LocateElement(SeqList* L, ElementType e)
 	if (i >= L->length)
 		return 0;
 	else
-		return i + 1; // Âß¼­Î»Ğò = ÏÂ±ê + 1
+		return i + 1; // é€»è¾‘ä½åº = ä¸‹æ ‡ + 1
 #endif
 }
 
 /**
- * Brief:	  Ë³Ğò±íÖĞÔÚµÚiµÄÂß¼­Î»Ğò²åÈëÒ»¸öÔªËØ
-			  ¸ÃËã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÎªO(n)
- * Method:    ListInsert
- * Returns:   bool
- * Parameter: SeqList * L
- * Parameter: int i
- * Parameter: ElementType e
- */
+* brief:    é¡ºåºè¡¨ä¸­åœ¨ç¬¬içš„é€»è¾‘ä½åºæ’å…¥ä¸€ä¸ªå…ƒç´ ã€è¯¥ç®—æ³•çš„æ—¶é—´å¤æ‚åº¦ä¸ºO(n)ã€‘
+* method:   ListInsert
+* param:    SeqList * L
+* param:    int i
+* param:    ElementType e
+* return:   bool
+*/
 bool ListInsert(SeqList* L, int i, ElementType e)
 {
-	if (i < 1 || i > L->length + 1 || L->length == MAXSIZE) // length+1´ú±íÓĞlength+1¸ö¿ÉÒÔ²åÈëµÄÎ»ÖÃ
+	if (i < 1 || i > L->length + 1 || L->length == MAXSIZE) // length+1ä»£è¡¨æœ‰length+1ä¸ªå¯ä»¥æ’å…¥çš„ä½ç½®
 		return false;
 
-	--i; // ½«Âß¼­Î»Ğò×ª»»ÎªÎïÀíÎ»Ğò£¨¼´ÏÂ±ê£©
-	if (i != L->length + 1) // ÅĞ¶Ï²åÈëÎ»ÖÃÊÇ·ñÔÚ±íÎ²
+	--i; // å°†é€»è¾‘ä½åºè½¬æ¢ä¸ºç‰©ç†ä½åºï¼ˆå³ä¸‹æ ‡ï¼‰
+	if (i != L->length + 1) // åˆ¤æ–­æ’å…¥ä½ç½®æ˜¯å¦åœ¨è¡¨å°¾
 	{
-		for (int j = L->length - 1; j >= i; --j) // j¼´ÎªLµÄ½Ç±ê£¬´ÓÎ²²¿ÏòÇ°±éÀúÖÁi
-			L->data[j + 1] = L->data[j]; // ¿ªÊ¼ÅĞ¶Ï¹ıË³Ğò±íµÄ³¤¶ÈÊÇ·ñ´ïµ½×î´ó£¬ËùÒÔ´Ë´¦²»»áÔ½½ç
+		for (int j = L->length - 1; j >= i; --j) // jå³ä¸ºLçš„è§’æ ‡ï¼Œä»å°¾éƒ¨å‘å‰éå†è‡³i
+			L->data[j + 1] = L->data[j]; // å¼€å§‹åˆ¤æ–­è¿‡é¡ºåºè¡¨çš„é•¿åº¦æ˜¯å¦è¾¾åˆ°æœ€å¤§ï¼Œæ‰€ä»¥æ­¤å¤„ä¸ä¼šè¶Šç•Œ
 	}
-	L->data[i] = e; // ²åÈëÔªËØe
+	L->data[i] = e; // æ’å…¥å…ƒç´ e
 	L->length++;
 
 	return true;
 }
 
 /**
- * Brief:	  É¾³ıË³Ğò±íÖĞÂß¼­Î»ĞòÎªiµÄÔªËØ
-			  ¸ÃËã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÎªO(n)
- * Method:    ListDelete
- * Returns:   bool
- * Parameter: SeqList * L
- * Parameter: int i
- */
+* brief:    åˆ é™¤é¡ºåºè¡¨ä¸­é€»è¾‘ä½åºä¸ºiçš„å…ƒç´ ã€è¯¥ç®—æ³•çš„æ—¶é—´å¤æ‚åº¦ä¸ºO(n)ã€‘
+* method:   ListDelete
+* param:    SeqList * L
+* param:    int i
+* param:    ElementType & e
+* return:   bool
+*/
 bool ListDelete(SeqList* L, int i, ElementType& e)
 {
 	if (i<1 || i>L->length) return false;
